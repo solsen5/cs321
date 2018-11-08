@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-US">
 
 <!-- Just a short comment -->
@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <!--TOP BAR-->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -23,9 +24,8 @@
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Profile</a></li>
 				<li><a href="#">Exercise Recommendations</a></li>
-				<li><a href="#">Forum</a></li>
+				<li><a href="#">Forum <span class="badge">5</span></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -34,22 +34,49 @@
 		</div>
 	</nav>
 
-	<div class="container" style="margin-top:65px">
-		<div class="row text-center">
-			<div class="col-sm-12"><h1>User Profile</h1></div>
-		</div>
-	</div>
-		
-	<div class="col-sm-3 well" style="margin-left: 25px">
-		<div class="text-center">
-			<img src="img/profile.jpg" class="avatar img-circle img-thumbnail">
-			<h4>User McName</h4>
-		</div><hr><br>
-		
-		<div class="panel panel-info">
-			<div class="panel-heading">User Information</div>
-			<div class="panel-body"><b>Followers</b>: 0</div>
-		</div>
-	</div>
+    <!--MAIN CONTENT-->
+    <div class="container" style="margin-top:65px">
+        <!--TITLE-->
+        <div class="row text-center">
+            <div class="col-sm-12"><h1>User Profile</h1></div>
+        </div>
+
+        <div class="row">
+            <!--LEFT PANEL-->
+            <div class="col-sm-3 well" ">
+                <!--PROFILE PICTURE-->
+                <div class="text-center">
+                    <img src="img/profile.jpg" class="avatar img-circle img-thumbnail">
+                    <h4>User McName</h4>
+                </div><hr><br>
+
+                <!--USER INFORMATION-->
+                <div class="panel panel-info">
+                    <div class="panel-heading text-center">User Information</div>
+                    <div class="panel-body">
+                        <b>Age</b>: Male<br />
+                        <b>Height</b>: 7 ft. 4 in.<br />
+                        <b>Weight</b>: 1350 lb<br /><br />
+                        <b>Followers</b>: 0<br />
+                        <b>Following</b>: 15240509842<br />
+                    </div>
+                </div>
+
+                <!--BADGES-->
+                <div class="panel panel-info">
+                    <div class="panel-heading text-center">Badges Earned</div>
+                    <div class="panel-body text-center">
+                        <img src="img/badges.png" class="avatar img-thumbnail" />
+                    </div>
+                </div>
+            </div>
+
+            <!--MAIN PANEL-->
+            <div class="col-sm-9">
+                <div class="row"></div>
+                <div class="row"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
