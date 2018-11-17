@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\src",
     "\\style"
   ],
-  "SelectedNode": "\\img",
+  "SelectedNode": "\\style\\create.css",
   "PreviewInSolutionExplorer": false
 }
