@@ -14,16 +14,17 @@
 </head>
 
 <body style="background-color:#fdf9ff">
+
     <!--TOP BAR-->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">SlimPossible</a>
+				<a class="navbar-brand" href="./profile.html">SlimPossible</a>
 			</div>
 			<ul class="nav navbar-nav">
                 <li><a href="./index.html">Home</a></li>
 				<li class="active"><a>Profile</a></li>
-				<li><a href="#">Exercise Recommendations</a></li>
+				<li><a href="#">Exercise</a></li>
 				<li><a href="#">Forum <span class="badge">5</span></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -41,12 +42,12 @@
         </div>
 
         <!--PANELS-->
-        <div class="row">
+        <div class="row" style="margin-top:20px">
             <!--LEFT PANEL-->
             <div class="col-sm-3 well" style="background-color:#d5d0fb">
                 <!--PROFILE PICTURE-->
                 <div class="text-center">
-                    <img src="../img/profile_default.jpg" class="avatar img-circle img-thumbnail" style="width:200px">
+                    <img src="../img/profile.jpg" class="avatar img-circle img-thumbnail" style="width:200px">
                     <h4>User McName</h4>
                 </div><hr><br>
 
@@ -54,7 +55,8 @@
                 <div class="panel panel">
                     <div class="panel-heading text-center" style="background-color: #c0b8f9">User Information</div>
                     <div class="panel-body">
-                        <b>Age</b>: Male<br />
+                        <b>Gender</b>: Male<br />
+						<b>Age</b>: 5<br />
                         <b>Height</b>: 7 ft. 4 in.<br />
                         <b>Weight</b>: 1350 lb<br /><br />
                         <b>Followers</b>: 0<br />
@@ -72,9 +74,29 @@
             </div>
 
             <!--MAIN PANEL-->
-            <div class="col-sm-9">
-                <div class="row"></div>
-                <div class="row"></div>
+            <div class="col-sm-8" style="margin-left:10px">
+                <!--CALENDAR-->
+                <iframe src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                
+                <!--WORKOUT PANEL-->
+                <div class="row">
+                    <div class="col-sm-12 well" id="bottom_panel">
+                        <div class="row">
+                            <p class="h1 text-center">Workout</p><br />
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary">Custom Exercise</button>
+                            </div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary">Random Exercise</button>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
