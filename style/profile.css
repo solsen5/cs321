@@ -1,9 +1,3 @@
-#bottom_panel {
-    margin-left:25px; 
-    margin-top:45px; 
-    background-color:#d5d0fb;
-}
-
 .btn.btn-primary {
     background: #872bc6 none repeat scroll 0 0;
     border-color: #8116ca;
@@ -17,12 +11,4 @@
 
 .btn.btn-primary:hover {
     background: #9b54cb none repeat scroll 0 0;
-}
-
-#top_bar {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #8116ca;
 }

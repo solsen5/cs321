@@ -22,14 +22,13 @@
 				<a class="navbar-brand" href="./profile.html">SlimPossible</a>
 			</div>
 			<ul class="nav navbar-nav">
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Home</a></li>
 				<li class="active"><a>Profile</a></li>
 				<li><a href="#">Exercise</a></li>
-				<li><a href="#">Forum <span class="badge">5</span></a></li>
+				<li><a href="./forum.html">Forum <span class="badge">3</span></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a href="./index.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -52,7 +51,7 @@
                 </div><hr><br>
 
                 <!--USER INFORMATION-->
-                <div class="panel panel">
+                <div class="panel panel-default">
                     <div class="panel-heading text-center" style="background-color: #c0b8f9">User Information</div>
                     <div class="panel-body">
                         <b>Gender</b>: Male<br />
@@ -65,7 +64,7 @@
                 </div>
 
                 <!--BADGES-->
-                <div class="panel panel">
+                <div class="panel panel-default">
                     <div class="panel-heading text-center" style="background-color: #c0b8f9">Badges Earned</div>
                     <div class="panel-body text-center">
                         <img src="../img/badges.png" class="avatar img-thumbnail" />
@@ -80,21 +79,23 @@
                 
                 <!--WORKOUT PANEL-->
                 <div class="row">
-                    <div class="col-sm-12 well" id="bottom_panel">
-                        <div class="row">
-                            <p class="h1 text-center">Workout</p><br />
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-3">
-                                <button type="button" class="btn btn-primary">Custom Exercise</button>
+                    <div class="col-sm-12">
+                        <div class="panel panel-default" style="margin-left:40px; margin-top:40px">
+                            <div class="panel-heading text-center" style="background-color: #c0b8f9"><p class="h3 text-center">Workout</p></div>
+                            <div class="panel-body">
+                                <div class="row" style="padding-top:15px; padding-bottom:15px">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-3">
+                                        <button type="button" class="btn btn-primary">Custom Exercise</button>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-3">
+                                        <button type="button" class="btn btn-primary">Random Exercise</button>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                </div>
                             </div>
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-3">
-                                <button type="button" class="btn btn-primary">Random Exercise</button>
-                            </div>
-                            <div class="col-sm-2"></div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </div>
