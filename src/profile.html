@@ -76,13 +76,13 @@
             </div>
 
             <!--MAIN PANEL-->
-            <div class="col-sm-8" style="margin-left:25px">
+            <div class="col-sm-8" style="margin-left:40px">
                 <!--CALENDAR-->
                 <div class="row">
                     <div class="col-sm-12" id="calendar-heading">
                         <h3 style="text-align:center;">November 25, 2018 - December 1, 2018</h3>
                     </div>
-                    <ul class="nav nav-tabs" id="tab-heading">
+                    <ul class="nav nav-tabs" id="tab-heading" style="padding-left:25px;">
                         <li class="active"><a data-toggle="tab" href="#sunday">Sunday</a></li>
                         <li><a data-toggle="tab" href="#monday">Monday</a></li>
                         <li><a data-toggle="tab" href="#tuesday">Tuesday</a></li>
@@ -324,43 +324,43 @@
                 <div class="row">
                     <div class="col-sm-11"></div>
                     <div class="col-sm-1">
-                        <button type="button" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-plus"></i></button>
+                        <button type="button" class="btn btn-default btn-circle" data-toggle="modal" data-target="#add"><i class="glyphicon glyphicon-plus"></i></button>
                     </div>
                     <!--modal-->
-                    <div id="custom" class="modal fade" role="dialog">
+                    <div id="add" class="modal fade" role="dialog">
                         <div class="modal-dialog modal-lg">
 
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Custom Exercise</h4>
+                                    <h4 class="modal-title">Add New Exercise</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form id="custom">
                                         <div class="row" style="margin-top:20px;">
                                             <div class="col-sm-6">
                                                 <label for="Name">Name</label>
-                                                <input type="text" class="form-control" placeholder="Name" maxlength="20" />
+                                                <input type="text" class="form-control" placeholder="Name" maxlength="20" required />
                                             </div>
                                             <div class="col-sm-6">
                                                 <label for="Description">Description</label>
-                                                <input type="text" class="form-control" placeholder="Description" maxlength="50" />
+                                                <input type="text" class="form-control" placeholder="Description" maxlength="50" required />
                                             </div>
                                         </div>
                                         <div class="row" style="margin-top:20px; margin-bottom:20px;">
                                             <div class="col-sm-6">
                                                 <label for="StartTime">Start Time</label>
-                                                <input type="time" class="form-control" />
+                                                <input type="time" class="form-control" required />
                                             </div>
                                             <div class="col-sm-6">
                                                 <label for="EndTime">End Time</label>
-                                                <input type="time" class="form-control" />
+                                                <input type="time" class="form-control" required />
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-default" data-dismiss="modal">Add</button>
                                 </div>
                             </div>
 
@@ -377,74 +377,11 @@
                                 <div class="row" style="padding-top:15px; padding-bottom:15px">
                                     <div class="col-sm-2"></div>
                                     <div class="col-sm-3">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#custom">Custom Exercise</button>
-
-                                        <!--modal-->
-                                        <div id="custom" class="modal fade" role="dialog">
-                                            <div class="modal-dialog modal-lg">
-
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Custom Exercise</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form id="custom">
-                                                            <div class="row" style="margin-top:20px;">
-                                                                <div class="col-sm-6">
-                                                                    <label for="Name">Name</label>
-                                                                    <input type="text" class="form-control"  placeholder="Name" maxlength="20" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label for="Description">Description</label>
-                                                                    <input type="text" class="form-control" placeholder="Description" maxlength="50" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="row" style="margin-top:20px; margin-bottom:20px;">
-                                                                <div class="col-sm-6">
-                                                                    <label for="StartTime">Start Time</label>
-                                                                    <input type="time" class="form-control" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label for="EndTime">End Time</label>
-                                                                    <input type="time" class="form-control" />
-                                                                </div>
-                                                            </div>
-                                                            </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
+                                        <button type="button" class="btn btn-primary">Custom Exercise</button>
                                     </div>
                                     <div class="col-sm-2"></div>
                                     <div class="col-sm-3">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#random">Random Exercise</button>
-
-                                        <!--modal-->
-                                        <div id="custom" class="modal fade" role="dialog">
-                                            <div class="modal-dialog modal-lg">
-
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Random Exercise</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                       
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
+                                        <button type="button" class="btn btn-primary">Random Exercise</button>
                                     </div>
                                     <div class="col-sm-2"></div>
                                 </div>
