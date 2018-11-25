@@ -12,3 +12,17 @@
 .btn.btn-primary:hover {
     background: #9b54cb none repeat scroll 0 0;
 }
+
+#calendar-heading {
+    background-color: #c9c4f2;
+    border: 1px solid #b0afaf;
+}
+
+#tab-heading {
+    font-size: 18px;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    text-align: center;
+    padding-left: 7px;
+    background-color: #d8d5ef;
+}
