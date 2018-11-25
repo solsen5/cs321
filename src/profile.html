@@ -7,6 +7,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script src="../js/profile.js"></script>
+
 	<link rel="stylesheet" href="../style/profile.css">
 	<link rel="shortcut icon" type="image/x-icon" href="../img/icon.png">
 	<meta charset="UTF-8">
@@ -22,7 +24,7 @@
 				<a class="navbar-brand" href="./profile.html">SlimPossible</a>
 			</div>
 			<ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
 				<li class="active"><a>Profile</a></li>
 				<li><a href="#">Exercise</a></li>
 				<li><a href="./forum.html">Forum <span class="badge">3</span></a></li>
@@ -53,13 +55,14 @@
                 <!--USER INFORMATION-->
                 <div class="panel panel-default">
                     <div class="panel-heading text-center" style="background-color: #c0b8f9">User Information</div>
-                    <div class="panel-body">
-                        <b>Gender</b>: Male<br />
-						<b>Age</b>: 5<br />
-                        <b>Height</b>: 7 ft. 4 in.<br />
-                        <b>Weight</b>: 1350 lb<br /><br />
-                        <b>Followers</b>: 0<br />
-                        <b>Following</b>: 15240509842<br />
+                    <br class="panel-body">
+                        <div id="result"></div>
+                        <b>Gender</b>: <div id="gender"></div> </br>
+						<b>Age</b>: <div id="age"></div> </br>
+                        <b>Height</b>: <div id="height"></div></br>
+                        <b>Weight</b>: <div id="weight"></div></br>
+                        <b>Followers</b>: <div id="followers"></div></br>
+                        <b>Following</b>: <div id="following"></div></br>
                     </div>
                 </div>
 

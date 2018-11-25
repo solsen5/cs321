@@ -22,6 +22,7 @@ function validate() {
     //lambda(server-side) validates
     if(res["responseJSON"] === "validation succeeded")
     {
+        localStorage.setItem("username", "a");
         location.href="profile.html";
     }
     else
