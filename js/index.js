@@ -1,5 +1,12 @@
-var API_URL = "https://rvyl38zfdf.execute-api.us-east-1.amazonaws.com/prod/"
 
+
+//Link for the api gateway
+var API_URL = "https://rvyl38zfdf.execute-api.us-east-1.amazonaws.com/prod/"
+//Turns off async so response from lambda can be used client-side
+jQuery.ajaxSetup({async:false});
+
+
+//currently not being used
 $(document).ready(function() {
     $("#submit").on("click", function() {
         console.log("dfsl");
@@ -17,10 +24,9 @@ $(document).ready(function() {
     })
 });
 
-function validate()
-{
-    jQuery.ajaxSetup({async:false});
-    console.log("dfsl");
+//validates the username and password
+function validate() {
+        //data that will be sent the lambda through the api gateway
         in_data = {
                     "username": document.getElementById("usernameInput").value,
                     "password": document.getElementById("passwordInput").value
@@ -30,20 +36,19 @@ function validate()
                 url: API_URL,
                 data: JSON.stringify(in_data),
                 contentType: 'application/json'
-//                async: false
                 });
         console.log(res["responseJSON"]['body'])
-
-//    if(   document.getElementById("usernameInput").value == "a"
-//       && document.getElementById("passwordInput").value == "a" )
-//    {
-//        alert( "validation succeeded" );
-//        location.href="profile.html";
-//    }
-//    else
-//    {
-//        alert( "Username or password was incorrect" );
-////        location.href="fail.html";
-//    }
+    //lambda(server-side) validates
+    if(res["responseJSON"]['body'] === "validation succeeded")
+    {
+        alert( "validation succeeded" );
+        location.href="profile.html";
+    }
+    else
+    {
+        alert( "Username or password was incorrect" );
+//        location.href="fail.html";
+//        instead needs to be red error message on the html side
+    }
 }
 
