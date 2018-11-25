@@ -15,13 +15,15 @@ function codeAddress() {
             data: JSON.stringify(in_data),
             contentType: 'application/json'
             });
+    console.log(res["responseJSON"]);
+    var userInfo = res["responseJSON"];
 
-    document.getElementById("gender").innerText = "A";
-    document.getElementById("age").innerText = "A";
-    document.getElementById("height").innerText = "A";
-    document.getElementById("weight").innerText = "A";
-    document.getElementById("followers").innerText = "A";
-    document.getElementById("following").innerText = "A";
+    document.getElementById("gender").innerText = "Gender: " + userInfo['gender'];
+    document.getElementById("age").innerText = "Age: " +userInfo['age'];
+    document.getElementById("height").innerText = "Height: " +userInfo['height'];
+    document.getElementById("weight").innerText = "Weight: " +userInfo['weight'];
+    document.getElementById("followers").innerText = "Followers: " +"-2";
+    document.getElementById("following").innerText = "Following: " +"100";
 
  }
  window.onload = codeAddress;
