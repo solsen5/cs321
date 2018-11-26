@@ -8,6 +8,7 @@ function createUser() {
     var username = document.getElementById("username").value
     var fname = document.getElementById("fname").value
     var lname = document.getElementById("lname").value
+    var password = document.getElementById("password").value
     in_data = {
                 "username": username,
                 "password": password,
