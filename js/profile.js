@@ -29,7 +29,7 @@ function codeAddress() {
     document.getElementById("following").innerText = "Following: " +"100";
 
  }
- window.onload = codeAddress;
+// window.onload = codeAddress;
 
 
  function activityCodeAddress(){
@@ -45,7 +45,20 @@ function codeAddress() {
          contentType: 'application/json'
      });
      console.log(res["responseJSON"]);
- 
+
+     var userInfo = res["responseJSON"];
+
+     for (x in userInfo) {
+         if (isItThisWeek(x['activity_ISO'])) {
+             var newDate = new Date(x['activity_ISO']);
+             var table = document.getElementById("day" + newDate.getDay());
+             var row = table.insertRow(-1);
+             row.insertCell(0).innerText = x['activity_title'];
+             row.insertCell(1).innerText = x['activity_starttime'];
+             row.insertCell(2).innerText = x['activity_endtime'];
+             row.insertCell(3).innerText = x['activity_desc'];
+         }
+     }
  }
 //window.onload = activityCodeAddress;
 
@@ -88,7 +101,7 @@ function codeAddress() {
  }
  //window.onload = activityCodeAddress;
 
-//window.onload = activityCodeAddress;
+window.onload = activityCodeAddress;
 
  function activityAdd() {
 
@@ -107,6 +120,8 @@ function codeAddress() {
          contentType: 'application/json'
      });
      console.log(res["responseJSON"]);
+
+
  }
 
  function convertTime(time)
@@ -124,4 +139,21 @@ function codeAddress() {
          time = time.slice(1);
 
      return time;
+ }
+
+ function isItThisWeek(date){
+     var checkDate = new Date(date);
+     var today = new Date();
+     var thisSunday = new Date(today.getFullYear(), today.getMonth(),today.getDate(), 0, 0, 0, 0);
+     while(thisSunday.getDay() != 0){
+     
+         thisSunday.setDate(thisSunday.getDate() - 1);
+     }
+
+     while(checkDate.getDay() != 0){
+         checkDate.setDate(checkDate.getDate() - 1);
+     }
+
+     return thisSunday.valueOf() == checkDate.valueOf();
+
  }
