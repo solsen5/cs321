@@ -1,0 +1,29 @@
+body {
+    background-image: url("../img/gradient.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+
+.header {
+	background-color:white;
+    padding: 20px;
+    text-align: center;
+}
+#rcorners1 {
+    border-radius: 25px;
+    background: white;
+    padding: 20px;
+    width: 600px;
+    height: 300px;
+    font-size: 16px;
+}
+h1 {
+    margin-left: 20px;
+}
+
+p{
+	font-size: 20px;
+}

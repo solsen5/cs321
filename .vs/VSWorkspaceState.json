@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\js",
     "\\src",
     "\\style"
   ],
-  "SelectedNode": "\\src\\profile.html",
+  "SelectedNode": "\\style\\profile.css",
   "PreviewInSolutionExplorer": false
 }
