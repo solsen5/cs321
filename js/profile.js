@@ -45,4 +45,59 @@ function codeAddress() {
      console.log(res["responseJSON"]);
  
  }
+
+ function addToTable()
+ {
+     var name = document.getElementById("name").value;
+     var description = document.getElementById("description").value;
+     var start_time = document.getElementById("start_time").value;
+     var end_time = document.getElementById("end_time").value;
+
+     if (name.length == 0 || description.length == 0 || start_time.length == 0 || end_time.length == 0)
+     {
+         document.getElementById("error_msg").style.visibility = "visible";
+     }
+     else
+     {
+         document.getElementById("error_msg").style.visibility = "hidden";
+
+         document.getElementById("name").value = "";
+         document.getElementById("description").value = "";
+         document.getElementById("start_time").value = "";
+         document.getElementById("end_time").value = "";
+         $('#add').modal('hide');
+
+         var table = document.getElementsByClassName("tab-pane fade in active")[0].firstElementChild;
+         var row = table.insertRow(-1);
+
+         var newStartTime = start_time.slice(0, 2).valueOf();
+         var newEndTime = end_time.slice(0, 2).valueOf();
+         
+         if (start_time.slice(0, 2).valueOf() > 12) {
+             newStartTime -= 12;
+             start_time = newStartTime + start_time.slice(2) + " pm";
+         }
+         else {
+             start_time = start_time + " am";
+         }
+         if (end_time.slice(0, 2).valueOf() > 12) {
+             newEndTime -= 12;
+             end_time = newEndTime + end_time.slice(2) + " pm";
+         }
+         else {
+             end_time = end_time + " am";
+         }
+         if (start_time.slice(0, 1).valueOf() == 0)
+             start_time = start_time.slice(1);
+         if (end_time.slice(0, 1).valueOf() == 0)
+             end_time = end_time.slice(1);
+
+         row.insertCell(0).innerText = name;
+         row.insertCell(1).innerText = start_time;
+         row.insertCell(2).innerText = end_time;
+         row.insertCell(3).innerText = description;
+
+         activityAdd();
+     }
+ }
  //window.onload = activityCodeAddress;
