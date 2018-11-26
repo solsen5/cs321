@@ -125,3 +125,20 @@ function codeAddress() {
 
      return time;
  }
+
+ function getCurrentWeek()
+ {
+     var today = new Date();
+     var sunday = today;
+     while (sunday.getDay() > 0)
+         sunday--;
+     var saturday = today;
+     while (daturday.getDay() < 7)
+         saturday++;
+
+     var title = (sunday.getMonth() + 1) + "/" + sunday.getDate() + "/" + sunday.getFullYear();
+     title += " - ";
+     title += (saturday.getMonth() + 1) + "/" + saturday.getDate() + "/" + saturday.getFullYear();
+
+     document.getElementById("date_title").innerHTML = title;
+ }
