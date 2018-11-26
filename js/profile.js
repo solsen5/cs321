@@ -1,6 +1,7 @@
 //Link for the api gateway
 var API_URL = "https://rvyl38zfdf.execute-api.us-east-1.amazonaws.com/prod/retrieveuserinformation"
 var API_URL2 = "https://rvyl38zfdf.execute-api.us-east-1.amazonaws.com/prod/getactivityinformation"
+var API_URL3 = "https://rvyl38zfdf.execute-api.us-east-1.amazonaws.com/prod/addactivityinformation"
 //Turns off async so response from lambda can be used client-side
 jQuery.ajaxSetup({async:false});
 
@@ -101,3 +102,24 @@ function codeAddress() {
      }
  }
  //window.onload = activityCodeAddress;
+
+window.onload = activityCodeAddress;
+
+ function activityAdd() {
+
+     in_data = {
+         "user_name": localStorage.getItem("username"),
+         "activity_title": document.getElementById("name").value,
+         "activity_starttime": document.getElementById("start_time").value,
+         "activity_endtime": document.getElementById("end_time").value,
+         "activity_ISO": document.getElementById("date").value,
+         "activity_desc": document.getElementById("description").value
+     }
+     var res = $.ajax({
+         type: "POST",
+         url: API_URL3,
+         data: JSON.stringify(in_data),
+         contentType: 'application/json'
+     });
+     console.log(res["responseJSON"]);
+ }
