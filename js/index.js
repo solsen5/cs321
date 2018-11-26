@@ -22,15 +22,12 @@ function validate() {
     //lambda(server-side) validates
     if(res["responseJSON"] === "validation succeeded")
     {
-        localStorage.setItem("username", "a");
+        localStorage.setItem("username", document.getElementById("usernameInput").value);
         location.href="profile.html";
     }
     else
     {
-       // alert( "Username or password was incorrect" );
 		document.getElementById("login_failed").innerHTML = "Login Failed. Username or password is incorrect.";
-//        location.href="fail.html";
-//        instead needs to be red error message on the html side
     }
 }
 
