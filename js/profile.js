@@ -141,19 +141,35 @@ window.onload = activityCodeAddress;
      return time;
  }
 
- function isItThisWeek(date){
-     var checkDate = new Date(date);
-     var today = new Date();
-     var thisSunday = new Date(today.getFullYear(), today.getMonth(),today.getDate(), 0, 0, 0, 0);
-     while(thisSunday.getDay() != 0){
+function isItThisWeek(date){
+    var checkDate = new Date(date);
+    var today = new Date();
+    var thisSunday = new Date(today.getFullYear(), today.getMonth(),today.getDate(), 0, 0, 0, 0);
+    while(thisSunday.getDay() != 0){
      
-         thisSunday.setDate(thisSunday.getDate() - 1);
-     }
+        thisSunday.setDate(thisSunday.getDate() - 1);
+    }
 
-     while(checkDate.getDay() != 0){
-         checkDate.setDate(checkDate.getDate() - 1);
-     }
+    while(checkDate.getDay() != 0){
+        checkDate.setDate(checkDate.getDate() - 1);
+    }
 
-     return thisSunday.valueOf() == checkDate.valueOf();
+    return thisSunday.valueOf() == checkDate.valueOf();
 
+}
+ function getCurrentWeek()
+ {
+     var today = new Date();
+     var sunday = today;
+     while (sunday.getDay() > 0)
+         sunday.setDate(sunday.getDate() - 1);
+     var saturday = today;
+     while (saturday.getDay() < 6)
+         saturday.setDate(saturday.getDate() + 1);
+
+     var title = (sunday.getMonth() + 1) + "/" + sunday.getDate() + "/" + sunday.getFullYear();
+     title += " - ";
+     title += (saturday.getMonth() + 1) + "/" + saturday.getDate() + "/" + saturday.getFullYear();
+
+     document.getElementById("date_title").innerHTML = title;
  }
