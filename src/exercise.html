@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../style/exercise.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" type="text/css" href="../style/exercise.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-	<body>
-		<div class="header">
-			<h1 align = "center"> Exercise Recommendations <h1>
-		</div>
-		<br>
-		<br>
-		<center>
-		<p id="rcorners1", align = "center">
-		<br> 
-		 What types of areas would you like to target? <br> Please select an area below.<br>
+<body>
 
-			<select>
-			  <option value="None"></option>
-			  <option value="Arms">Arms</option>
-			  <option value="Legs">Legs</option>
-			  <option value="Core">Core</option>
-			  <option value="FullBody">Full Body</option>
-			</select>
+    <!--TOP BAR-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="./profile.html">SlimPossible</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./profile.html">Profile</a></li>
+                <li class="active"><a>Exercise</a></li>
+                <li><a href="./forum.html">Forum</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./index.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
 
-		<br><br><br>
-		 How intense would you like the work out to be?<br>
-		 Please select level of intensity.<br>
-			<select>
-			  <option value="None"></option>
-			  <option value="Beginner">Beginner</option>
-			  <option value="Intermediate">Intermediate</option>
-			  <option value="Advanced">Advanced</option>
-			</select>
-		</p>
-		</center>
-		<br>
-		<br>
-		<br>
-		<br>
+    <div class="container-fluid" style="margin-top:60px;">
 
-	</body>
+        <div class="header">
+            <h1 align="center"> Exercise Recommendations <h1>
+        </div>
+        <br>
+        <br>
+        <center>
+            <p id="rcorners1" , align="center">
+                <br>
+                What types of areas would you like to target? <br> Please select an area below.<br>
+
+                <select>
+                    <option value="None"></option>
+                    <option value="Arms">Arms</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Core">Core</option>
+                    <option value="FullBody">Full Body</option>
+                </select>
+
+                <br><br><br>
+                How intense would you like the work out to be?<br>
+                Please select level of intensity.<br>
+                <select>
+                    <option value="None"></option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </p>
+        </center>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+</body>
 </html>
