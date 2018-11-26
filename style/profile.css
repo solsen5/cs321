@@ -39,4 +39,5 @@
 
 div#result {
     margin-left: 15px;
+    text-transform: capitalize;
 }

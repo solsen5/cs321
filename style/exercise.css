@@ -15,9 +15,10 @@ body {
 #rcorners1 {
     border-radius: 25px;
     background: white;
-    padding: 20px; 
-    width: 500px;
-    height: 300px;    
+    padding: 20px;
+    width: 600px;
+    height: 300px;
+    font-size: 16px;
 }
 h1 {
     margin-left: 20px;
