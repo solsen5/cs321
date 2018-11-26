@@ -95,8 +95,8 @@ function codeAddress() {
      in_data = {
          "user_name": localStorage.getItem("username"),
          "activity_title": document.getElementById("name").value,
-         "activity_starttime": document.getElementById("start_time").value,
-         "activity_endtime": document.getElementById("end_time").value,
+         "activity_starttime": convertTime(document.getElementById("start_time").value),
+         "activity_endtime": convertTime(document.getElementById("end_time").value),
          "activity_ISO": document.getElementById("date").value,
          "activity_desc": document.getElementById("description").value
      }
