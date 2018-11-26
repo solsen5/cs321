@@ -77,27 +77,8 @@ function codeAddress() {
          var table = document.getElementsByClassName("tab-pane fade in active")[0].firstElementChild;
          var row = table.insertRow(-1);
 
-         var newStartTime = start_time.slice(0, 2).valueOf();
-         var newEndTime = end_time.slice(0, 2).valueOf();
-         
-         if (start_time.slice(0, 2).valueOf() > 12) {
-             newStartTime -= 12;
-             start_time = newStartTime + start_time.slice(2) + " pm";
-         }
-         else {
-             start_time = start_time + " am";
-         }
-         if (end_time.slice(0, 2).valueOf() > 12) {
-             newEndTime -= 12;
-             end_time = newEndTime + end_time.slice(2) + " pm";
-         }
-         else {
-             end_time = end_time + " am";
-         }
-         if (start_time.slice(0, 1).valueOf() == 0)
-             start_time = start_time.slice(1);
-         if (end_time.slice(0, 1).valueOf() == 0)
-             end_time = end_time.slice(1);
+         start_time = convertTime(start_time);
+         end_time = convertTime(end_time);
 
          row.insertCell(0).innerText = name;
          row.insertCell(1).innerText = start_time;
@@ -126,4 +107,21 @@ function codeAddress() {
          contentType: 'application/json'
      });
      console.log(res["responseJSON"]);
+ }
+
+ function convertTime(time)
+ {
+     var newTime = time.slice(0, 2).valueOf();
+
+     if (time.slice(0, 2).valueOf() > 12) {
+         newTime -= 12;
+         time = newTime + time.slice(2) + " pm";
+     }
+     else {
+         time = time + " am";
+     }
+     if (time.slice(0, 1).valueOf() == 0)
+         time = time.slice(1);
+
+     return time;
  }
