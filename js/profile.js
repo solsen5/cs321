@@ -20,6 +20,7 @@ function codeAddress() {
     console.log(res["responseJSON"]);
     var userInfo = res["responseJSON"];
 
+    document.getElementById("fullname").innerText = userInfo['fname'] + " " + userInfo['lname'];
     document.getElementById("gender").innerText = "Gender: " + userInfo['gender'];
     document.getElementById("age").innerText = "Age: " +userInfo['age'];
     document.getElementById("height").innerText = "Height: " +userInfo['height'];
@@ -103,7 +104,7 @@ function codeAddress() {
  }
  //window.onload = activityCodeAddress;
 
-window.onload = activityCodeAddress;
+//window.onload = activityCodeAddress;
 
  function activityAdd() {
 
