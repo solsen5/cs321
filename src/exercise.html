@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>SlimPossible - Exercise Recommender</title>
+
     <link rel="stylesheet" type="text/css" href="../style/exercise.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon.png">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -36,11 +41,11 @@
         <br>
         <br>
         <center>
-            <p id="rcorners1" , align="center">
+            <div id="rcorners1" , align="center">
                 <br>
                 What types of areas would you like to target? <br> Please select an area below.<br>
 
-                <select>
+                <select id="area" form="exerciseform" required>
                     <option value="None"></option>
                     <option value="Arms">Arms</option>
                     <option value="Legs">Legs</option>
@@ -51,13 +56,129 @@
                 <br><br><br>
                 How intense would you like the work out to be?<br>
                 Please select level of intensity.<br>
-                <select>
+                <select id="level" form="exerciseform" required>
                     <option value="None"></option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
                 </select>
-            </p>
+
+                <form action="#" id="exerciseform">
+                    <button type="button" class="btn btn-primary" onclick="getExercise()" style="margin-top:20px">Get Exercise</button>
+                </form>
+                <h3 id="exercise" style="margin-top:20px"></h3>
+
+                <script>
+                    var area = document.getElementById('area');
+                    var level = document.getElementById('level');
+                    var exercise = document.getElementById('exercise')
+
+                    function getExercise()
+                    {
+                        document.getElementById("rcorners1").style.height = "350px";
+
+                        if (area.selectedIndex == 0 || level.selectedIndex == 0)
+                        {
+                            exercise.style.color = "red";
+                            exercise.innerHTML = "Please fill in the required fields"
+                        }
+                        else
+                        {
+                            exercise.style.color = "black";
+                            var exerciseString = "";
+                            var random = Math.floor(Math.random() * 3);
+
+                            switch (area.selectedIndex)
+                            {
+                                case 1:
+                                    switch (random)
+                                    {
+                                        case 0:
+                                            exerciseString += "Pushups";
+                                            break;
+                                        case 1:
+                                            exerciseString += "Bicep Curls";
+                                            break;
+                                        case 2:
+                                            exerciseString += "Bench Dips";
+                                            break;
+                                        default:
+                                            exerciseString += "ERROR";
+                                    }
+                                    break;
+                                case 2:
+                                    switch (random) {
+                                        case 0:
+                                            exerciseString += "Dumbbell Squats";
+                                            break;
+                                        case 1:
+                                            exerciseString += "Lunges";
+                                            break;
+                                        case 2:
+                                            exerciseString += "Calf Raises";
+                                            break;
+                                        default:
+                                            exerciseString += "ERROR";
+                                    }
+                                    break;
+                                case 3:
+                                    switch (random) {
+                                        case 0:
+                                            exerciseString += "Planks";
+                                            break;
+                                        case 1:
+                                            exerciseString += "Curlups";
+                                            break;
+                                        case 2:
+                                            exerciseString += "Side Planks";
+                                            break;
+                                        default:
+                                            exerciseString += "ERROR";
+                                    }
+                                    break;
+                                case 4:
+                                    switch (random) {
+                                        case 0:
+                                            exerciseString += "Mountain Climbers";
+                                            break;
+                                        case 1:
+                                            exerciseString += "Jumping Jacks";
+                                            break;
+                                        case 2:
+                                            exerciseString += "Burpees";
+                                            break;
+                                        default:
+                                            exerciseString += "ERROR";
+                                    }
+                                    break;
+                                default:
+                                    exerciseString += "ERROR";
+                            }
+
+                            exerciseString += " - ";
+
+                            switch (level.selectedIndex)
+                            {
+                                case 1:
+                                    exerciseString += "5";
+                                    break;
+                                case 2:
+                                    exerciseString += "10";
+                                    break;
+                                case 3:
+                                    exerciseString += "15";
+                                    break;
+                                default:
+                                    exerciseString += "10";
+                            }
+
+                            exerciseString += " sets of " + (((Math.floor(Math.random() * 3)) + 1) * 5) + " reps";
+
+                            exercise.innerHTML = exerciseString;
+                        }
+                    }
+                </script>
+            </div>
         </center>
         <br>
         <br>
