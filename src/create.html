@@ -74,8 +74,10 @@
                             if (password.value != confirm_password.value) {
                                 confirm_password.setCustomValidity("Passwords Don't Match!");
                             } else {
+                                console.log("here");
+                                createUser();
                                 confirm_password.setCustomValidity('');
-                                createUser;
+                                console.log("here2");
                             }
                         }
 
