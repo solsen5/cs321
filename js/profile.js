@@ -131,10 +131,10 @@ function codeAddress() {
      var today = new Date();
      var sunday = today;
      while (sunday.getDay() > 0)
-         sunday--;
+         sunday.setDate(sunday.getDate() - 1);
      var saturday = today;
      while (saturday.getDay() < 6)
-         saturday++;
+         saturday.setDate(saturday.getDate() + 1);
 
      var title = (sunday.getMonth() + 1) + "/" + sunday.getDate() + "/" + sunday.getFullYear();
      title += " - ";
