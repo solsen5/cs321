@@ -133,7 +133,7 @@ function codeAddress() {
      while (sunday.getDay() > 0)
          sunday--;
      var saturday = today;
-     while (daturday.getDay() < 7)
+     while (saturday.getDay() < 6)
          saturday++;
 
      var title = (sunday.getMonth() + 1) + "/" + sunday.getDate() + "/" + sunday.getFullYear();
