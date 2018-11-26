@@ -46,6 +46,7 @@ function codeAddress() {
      console.log(res["responseJSON"]);
  
  }
+//window.onload = activityCodeAddress;
 
  function addToTable()
  {
@@ -53,17 +54,21 @@ function codeAddress() {
      var description = document.getElementById("description").value;
      var start_time = document.getElementById("start_time").value;
      var end_time = document.getElementById("end_time").value;
+     var date = document.getElementById("date").value;
 
-     if (name.length == 0 || description.length == 0 || start_time.length == 0 || end_time.length == 0)
+     if (name.length == 0 || description.length == 0 || start_time.length == 0 || end_time.length == 0 || date.length == 0)
      {
          document.getElementById("error_msg").style.visibility = "visible";
      }
      else
      {
+         activityAdd();
+
          document.getElementById("error_msg").style.visibility = "hidden";
 
          document.getElementById("name").value = "";
          document.getElementById("description").value = "";
+         document.getElementById("date").value = "";
          document.getElementById("start_time").value = "";
          document.getElementById("end_time").value = "";
          $('#add').modal('hide');
@@ -97,13 +102,8 @@ function codeAddress() {
          row.insertCell(1).innerText = start_time;
          row.insertCell(2).innerText = end_time;
          row.insertCell(3).innerText = description;
-
-         activityAdd();
      }
  }
- //window.onload = activityCodeAddress;
-
-window.onload = activityCodeAddress;
 
  function activityAdd() {
 
