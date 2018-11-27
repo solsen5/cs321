@@ -47,17 +47,17 @@ function codeAddress() {
      console.log(res["responseJSON"]);
 
      var userInfo = JSON.parse(res["responseJSON"]);
-
+     var i;
      if (userInfo.length != 0) {
-         for (x in userInfo) {
-             if (isItThisWeek(x["activity_ISO"])) {
-                 var newDate = new Date(x['activity_ISO']);
+         for (i = 0; i < userInfo.length;i++) {
+             if (isItThisWeek(userInfo[i]["activity_ISO"])) {
+                 var newDate = new Date(userInfo[i]['activity_ISO']);
                  var table = document.getElementById("day" + newDate.getDay());
                  var row = table.insertRow(-1);
-                 row.insertCell(0).innerText = x['activity_title'];
-                 row.insertCell(1).innerText = x['activity_starttime'];
-                 row.insertCell(2).innerText = x['activity_endtime'];
-                 row.insertCell(3).innerText = x['activity_desc'];
+                 row.insertCell(0).innerText = userInfo[i]['activity_title'];
+                 row.insertCell(1).innerText = userInfo[i]['activity_starttime'];
+                 row.insertCell(2).innerText = userInfo[i]['activity_endtime'];
+                 row.insertCell(3).innerText = userInfo[i]['activity_desc'];
              }
          }
      }
