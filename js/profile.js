@@ -109,7 +109,7 @@ function codeAddress() {
  }
  //window.onload = activityCodeAddress;
 
-window.onload = activityCodeAddress;
+//window.onload = activityCodeAddress;
 
  function activityAdd() {
 
@@ -185,3 +185,13 @@ function isItThisWeek(date){
 
      document.getElementById("date_title").innerHTML = title;
  }
+
+
+ function load() {
+     codeAddress();
+     activityCodeAddress();
+     getCurrentWeek();
+
+ }
+
+ window.onload = load;
