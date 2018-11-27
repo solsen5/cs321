@@ -52,6 +52,7 @@ function codeAddress() {
          for (i = 0; i < userInfo.length;i++) {
              if (isItThisWeek(userInfo[i]["activity_ISO"])) {
                  var newDate = new Date(userInfo[i]['activity_ISO']);
+                 newDate.setHours(newDate.getHours() + 5);
                  var table = document.getElementById("day" + newDate.getDay());
                  var row = table.insertRow(-1);
                  row.insertCell(0).innerText = userInfo[i]['activity_title'];
@@ -145,6 +146,7 @@ window.onload = activityCodeAddress;
 
 function isItThisWeek(date){
     var checkDate = new Date(date);
+    checkDate.setHours(checkDate.getHours() + 5);
     var today = new Date();
     var thisSunday = new Date(today.getFullYear(), today.getMonth(),today.getDate(), 0, 0, 0, 0);
     while(thisSunday.getDay() != 0){
