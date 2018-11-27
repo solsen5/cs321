@@ -36,7 +36,7 @@ function codeAddress() {
  
      var username = localStorage.getItem("username");
      in_data = {
-         "username": username
+         "user_name": username
      }
      var res =  $.ajax({
          type: "POST",
@@ -46,17 +46,19 @@ function codeAddress() {
      });
      console.log(res["responseJSON"]);
 
-     var userInfo = res["responseJSON"];
+     var userInfo = JSON.parse(res["responseJSON"]);
 
-     for (x in userInfo) {
-         if (isItThisWeek(x['activity_ISO'])) {
-             var newDate = new Date(x['activity_ISO']);
-             var table = document.getElementById("day" + newDate.getDay());
-             var row = table.insertRow(-1);
-             row.insertCell(0).innerText = x['activity_title'];
-             row.insertCell(1).innerText = x['activity_starttime'];
-             row.insertCell(2).innerText = x['activity_endtime'];
-             row.insertCell(3).innerText = x['activity_desc'];
+     if (userInfo.length != 0) {
+         for (x in userInfo) {
+             if (isItThisWeek(x["activity_ISO"])) {
+                 var newDate = new Date(x['activity_ISO']);
+                 var table = document.getElementById("day" + newDate.getDay());
+                 var row = table.insertRow(-1);
+                 row.insertCell(0).innerText = x['activity_title'];
+                 row.insertCell(1).innerText = x['activity_starttime'];
+                 row.insertCell(2).innerText = x['activity_endtime'];
+                 row.insertCell(3).innerText = x['activity_desc'];
+             }
          }
      }
  }
