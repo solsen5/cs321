@@ -172,10 +172,10 @@ function isItThisWeek(date){
  function getCurrentWeek()
  {
      var today = new Date();
-     var sunday = today;
+     var sunday = new Date();
      while (sunday.getDay() > 0)
          sunday.setDate(sunday.getDate() - 1);
-     var saturday = today;
+     var saturday = new Date();
      while (saturday.getDay() < 6)
          saturday.setDate(saturday.getDate() + 1);
 
