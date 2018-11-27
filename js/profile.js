@@ -72,6 +72,8 @@ function codeAddress() {
      var start_time = document.getElementById("start_time").value;
      var end_time = document.getElementById("end_time").value;
      var date = document.getElementById("date").value;
+     var day = new Date(date);
+     day.setHours(day.getHours() + 5);
 
      if (name.length == 0 || description.length == 0 || start_time.length == 0 || end_time.length == 0 || date.length == 0)
      {
@@ -90,16 +92,19 @@ function codeAddress() {
          document.getElementById("end_time").value = "";
          $('#add').modal('hide');
 
-         var table = document.getElementsByClassName("tab-pane fade in active")[0].firstElementChild;
-         var row = table.insertRow(-1);
+         if (isItThisWeek(date)) {
 
-         start_time = convertTime(start_time);
-         end_time = convertTime(end_time);
+             var table = document.getElementById("day" + day.getDay());
+             var row = table.insertRow(-1);
 
-         row.insertCell(0).innerText = name;
-         row.insertCell(1).innerText = start_time;
-         row.insertCell(2).innerText = end_time;
-         row.insertCell(3).innerText = description;
+             start_time = convertTime(start_time);
+             end_time = convertTime(end_time);
+
+             row.insertCell(0).innerText = name;
+             row.insertCell(1).innerText = start_time;
+             row.insertCell(2).innerText = end_time;
+             row.insertCell(3).innerText = description;
+         }
      }
  }
  //window.onload = activityCodeAddress;
@@ -131,13 +136,16 @@ window.onload = activityCodeAddress;
  {
      var newTime = time.slice(0, 2).valueOf();
 
-     if (time.slice(0, 2).valueOf() > 12) {
-         newTime -= 12;
+     if (time.slice(0, 2).valueOf() > 11) {
+         if (time.slice(0,2).valueOf() >12)
+            newTime -= 12;
          time = newTime + time.slice(2) + " pm";
      }
      else {
          time = time + " am";
      }
+     if (time.slice(0, 2).valueOf() == 0)
+         time = "12" + time.slice(2);
      if (time.slice(0, 1).valueOf() == 0)
          time = time.slice(1);
 
